@@ -1,6 +1,10 @@
 package tommy.spring.polymorphism;
 
 public class LgTV implements TV {
+	public LgTV() {
+		System.out.println("LgTV 객체를 생성한다.");
+	}
+	
 	public void powerOn() {
 		System.out.println("LgTV 전원을 켠다.");
 	}
