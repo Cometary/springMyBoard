@@ -3,14 +3,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:c="http://www.springframework.org/schema/c"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<bean id="collectionBean" class="tommy.spring.collection.CollectionBean">
-		<property name="addressList">
-			<props>
-				<prop key="홍길동">율도국</prop>
-				<prop key="손오공">화과산</prop>
-			</props>
-		</property>
+	<context:component-scan base-package="tommy.spring.web"></context:component-scan>
+	<!-- <bean id="boardService" class="tommy.spring.web.board.impl.BoardServiceImpl">
+		<property name="boardDAO" ref="boardDAO" />
 	</bean>
+	<bean id="boardDAO" class="tommy.spring.web.board.impl.BoardDAO"></bean> -->
+	
+	<!-- <bean id="userService" class="tommy.spring.web.user.impl.UserServiceImpl">
+		<property name="userDAO" ref="userDAO" />
+	</bean>
+	<bean id="userDAO" class="tommy.spring.web.user.impl.UserDAO"></bean> -->
+	
 </beans>
