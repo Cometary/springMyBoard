@@ -10,6 +10,9 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 	<context:component-scan base-package="tommy.spring.web"></context:component-scan>
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+	<!-- <context:component-scan base-package="tommy.spring.web"></context:component-scan>
 	<bean id="log" class="tommy.spring.web.common.Log4jAdvice"></bean>
 	<bean id="before" class="tommy.spring.web.common.BeforeAdvice"></bean>
 	<bean id="afterReturning" class="tommy.spring.web.common.AfterReturningAdvice"></bean>
@@ -22,6 +25,6 @@
 		<aop:aspect ref="around">
 			<aop:around method="aroundLog" pointcut-ref="allPointcut"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:config> -->
 	
 </beans>
