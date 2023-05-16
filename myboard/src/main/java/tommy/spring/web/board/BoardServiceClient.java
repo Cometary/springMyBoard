@@ -22,6 +22,7 @@ public class BoardServiceClient {
 		List<BoardVO> boardList = boardService.getBoardList(vo);
 		for (BoardVO board : boardList) {
 			System.out.println("---> " + board.toString());
+			System.out.println("---> " + board.toString());
 		}
 		// 5. 스프링 컨테이너 종료
 		container.close();
