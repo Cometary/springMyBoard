@@ -12,6 +12,7 @@ import tommy.spring.web.board.BoardVO;
 public class BoardDAOSpring {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+
 	private final String BOARD_INSERT = "insert into myboard(seq, title, writer, content) "
 			+ "values((select nvl(max(seq), 0)+1 from myboard), ?, ?, ?)";
 	private final String BOARD_UPDATE = "update myboard set title=?, " + "content=? where seq=?";
