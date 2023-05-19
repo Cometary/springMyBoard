@@ -4,12 +4,8 @@
 <%@ page import="tommy.spring.web.board.BoardVO"%>
 <%@ page import="java.util.List"%>
 <%
-// 1. 사용자 입력 정보 추출 : 검색 기능은 나중에 구현
-// 2. 데이터베이스 연동 처리
-BoardVO vo = new BoardVO();
-BoardDAO boardDAO = new BoardDAO();
-List<BoardVO> boardList = boardDAO.getBoardList(vo);
-// 3. 응답 화면 구성
+// 세션에 저장된 글 목록을 추출
+List<BoardVO> boardList = (List<BoardVO>) session.getAttribute("boardList");
 %>
 <!DOCTYPE html>
 <html>
@@ -22,7 +18,7 @@ List<BoardVO> boardList = boardDAO.getBoardList(vo);
 	<h1>글 목록</h1>
 	<hr>
 	<h3>
-		테스트 회원님 환영합니다.<a href="logoutProc.jsp">Log-Out</a>
+		테스트 회원님 환영합니다.<a href="logout.do">Log-Out</a>
 	</h3>
 	<!-- 검색 시작 -->
 	<form action="getBoardList.jsp" method="post">
@@ -52,7 +48,7 @@ List<BoardVO> boardList = boardDAO.getBoardList(vo);
 		%>
 		<tr>
 			<td><%=board.getSeq()%></td>
-			<td><a href="getBoard.jsp?seq=<%=board.getSeq()%>"><%=board.getTitle()%></a>
+			<td><a href="getBoard.do?seq=<%=board.getSeq()%>"><%=board.getTitle()%></a>
 			</td>
 			<td><%=board.getWriter()%></td>
 			<td><%=board.getRegDate()%></td>

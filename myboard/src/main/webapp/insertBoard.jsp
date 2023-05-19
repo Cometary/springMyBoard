@@ -10,10 +10,10 @@
 <body>
 	<h1>글등록</h1>
 	<h3>
-		<a href="logoutProc.jsp">Log Out</a>
+		<a href="logout.do">Log Out</a>
 	</h3>
 	<hr>
-	<form action="insertBoardProc.jsp" method="post">
+	<form action="insertBoard.do" method="post">
 		<table border="1">
 			<tr>
 				<td>제목</td>
