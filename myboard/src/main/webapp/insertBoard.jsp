@@ -34,7 +34,7 @@
 	</form>
 	<hr>
 	<h3>
-		<a href="getBoardList.jsp">글 목록으로 가기</a>
+		<a href="getBoardList.do">글 목록으로 가기</a>
 	</h3>
 </body>
 </body>
