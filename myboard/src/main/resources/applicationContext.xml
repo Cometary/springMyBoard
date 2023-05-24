@@ -30,7 +30,16 @@
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	<!-- dataSource를 주입받은 sessionFactory -->
+	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+	</bean>
 	
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<!-- setter가 없어서 생성자로 해야합니다 -->
+		<constructor-arg ref="sessionFactory" />
+	</bean>
 	<!-- 트랜젝션 어드바이스
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
