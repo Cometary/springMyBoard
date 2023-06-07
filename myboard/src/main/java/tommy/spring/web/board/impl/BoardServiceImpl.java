@@ -14,7 +14,7 @@ import tommy.spring.web.board.BoardVO;
 public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
-	private BoardDAOSpring boardDAO;
+	private BoardDAOJPA boardDAO;
 
 //	public void setBoardDAO(BoardDAO boardDAO) {
 //		this.boardDAO = boardDAO;
