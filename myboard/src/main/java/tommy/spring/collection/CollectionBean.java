@@ -12,8 +12,5 @@ public class CollectionBean {
 	public void setAddressList(Properties addressList) {
 		this.addressList = addressList;
 	}
-	
-	
-	
-	
+
 }
